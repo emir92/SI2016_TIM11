@@ -48,4 +48,13 @@ public class AccountService extends BaseService<Account, AccountRepository> {
     public List<Account> getByPartOfEmail(String partOfEmail) {
         return repository.findByEmailContaining(partOfEmail);
     }
+    
+    // Treba prepraviti ID 
+    public Account findById(long id) {
+        return repository.findOne(id);
+    }
+
+    public void deleteUserById(long id) {
+        repository.delete(id);
+    }
 }
